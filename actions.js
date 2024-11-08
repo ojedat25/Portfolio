@@ -2,7 +2,14 @@
 $(loadPage);
 
 function loadPage(){
-    let pdfObject = $("object")
+    let $resumeOption = $("resume");
+    $resumeOption.click(selectedHandler);
     pdfObject.data = "ResumeFinal.pdf";
-    console.log(pdfObject.data);
+    
+}
+
+function selectedHandler(){
+    if(this.text() == "resume"){
+        $("object").data = "ResumeFinal.pdf";
+    }
 }
