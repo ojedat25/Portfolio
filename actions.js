@@ -2,13 +2,19 @@
 $(loadPage);
 
 function loadPage(){
-    let $resumeOption = $("resume");
+    let $resumeOption = $("#resume");
     $resumeOption.click(selectedHandler);
+    
     
 }
 
 function selectedHandler(){
-    if(this.text() == "resume"){
-        $("object").data = "ResumeFinal.pdf";
+    console.log("here")
+    let text = $(this).text()
+    
+    if(text == "Resume"){
+        $("object").attr("data","ResumeFinal.pdf");
+        console.log("here")
+
     }
 }
