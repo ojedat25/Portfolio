@@ -4,7 +4,7 @@ $(loadPage);
 function loadPage(){
     let $resumeOption = $("#resume");
     $resumeOption.click(selectedHandler);
-    
+    console.log("here")
     
 }
 
