@@ -4,7 +4,6 @@ $(loadPage);
 function loadPage(){
     let $resumeOption = $("resume");
     $resumeOption.click(selectedHandler);
-    pdfObject.data = "ResumeFinal.pdf";
     
 }
 
