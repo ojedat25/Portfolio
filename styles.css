@@ -4,8 +4,8 @@ body {
     grid-template-rows: 10vh 73vh;
     grid-template-areas: "header header header"
                          "topDiv topDiv topDiv";
-    gap: 10px;
-    background-color: rgb(14, 5, 15);
+    gap: 20px;
+    background-color: rgb(4, 10, 24);
     margin: 0;
     height: 100vh;
     
@@ -15,8 +15,8 @@ header{
     top:5%;
     grid-area: header;
     text-align: center;
+    border-bottom: 1px solid white;
     height: 100%;
-    background-color: rgba(23, 11, 59,30%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -24,24 +24,33 @@ header{
     font-weight: bold;
     font-family: "Bebas Neue", sans-serif;
     text-shadow: 0px 0px 2px black;
+    color:white;
 }
 
 nav{
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
     position: fixed;
-    border: 2px solid black;
+    border-radius: 10px;
     grid-area: nav;
     text-align: center;
-    justify-content: start;
+    justify-content: center;
     width: 25vw;
     height: 69.5vh;
     box-shadow: 0px 0px 20px black;
-    top: 12.5vh;
+    top: 13.7vh;
+    left: 1vh;;
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    font-size: 50px;
+    text-shadow: 0px 0px 10px black;
 
 
 }
 main{
     position: absolute;
-    border: 2px solid black;
+    
     grid-area: main;
     height: 95.5%;
     width: 45%;
@@ -49,25 +58,29 @@ main{
     top:2%;
     box-shadow: 0px 0px 20px black;
     text-align: center;
+    border-radius: 10px;
     
 }
 
 aside{
     position:fixed;
-    border: 2px solid black;
+    
     grid-area: aside;
     text-align: center;
     width: 25vw;
     height: 69.5vh;
-    top: 12.5vh;
+    top: 13.7vh;
     left: 74.5%;
     box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
 }
+
 .mainContainer{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     margin:0 auto;
-    
+    position: relative;
+    top:3vh;
 }
 #pdfFile{
     position: relative;
@@ -79,10 +92,18 @@ aside{
    
 }
 #topDiv{
-    background-color: rgba(23, 11, 59,30%);
+    background-color: rgba(219, 199, 166,70%);
     width: 100%;
     height: 100%;
-    
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     grid-area: topDiv;
     position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    object-position: 0px 30%;
 }
