@@ -1,13 +1,13 @@
 body {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 75px 550px;
+    grid-template-rows: 10vh 73vh;
     grid-template-areas: "header header header"
                          "topDiv topDiv topDiv";
     gap: 10px;
     background-color: rgb(27,23,52);
     margin: 0;
-    height: 1000px;
+    height: 100vh;
     
 }
 header{
@@ -32,10 +32,10 @@ nav{
     grid-area: nav;
     text-align: center;
     justify-content: start;
-    width: 25%;
-    height: 72%;
-    top: 13%;
+    width: 25vw;
+    height: 69.5vh;
     box-shadow: 0px 0px 20px black;
+    top: 12.5vh;
 
 
 }
@@ -48,6 +48,8 @@ main{
     left: 27.5%;
     top:2%;
     box-shadow: 0px 0px 20px black;
+    text-align: center;
+    
 }
 
 aside{
@@ -55,10 +57,9 @@ aside{
     border: 2px solid black;
     grid-area: aside;
     text-align: center;
-    width: 25%;
-    height: 72%;;
-   justify-content: end;
-    top: 13%;
+    width: 25vw;
+    height: 69.5vh;
+    top: 12.5vh;
     left: 74.5%;
     box-shadow: 0px 0px 10px black;
 }
