@@ -13,7 +13,7 @@ function selectedHandler(){
     let text = $(this).text()
     
     if(text == "Resume"){
-        $("object").attr("data","ResumeFinal.pdf");
+        $("object").attr("data","ResumeFinal.pdf#toolbar=0");
         console.log("here")
 
     }
