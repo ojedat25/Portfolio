@@ -23,7 +23,8 @@
 }
 html{
     font-size: 70%;
-    overflow-x: hidden;
+    
+    
 }
 body{
     background-color: var(--main-color);
@@ -98,6 +99,7 @@ section{
     min-height: 100vh;
     position: relative;
     
+    
 }
 #Home{
     position: relative;
@@ -131,7 +133,7 @@ section{
     margin-left: 15vw;
     display: flex;
     flex-direction: column;
-    width:100%;
+    width:85%;
     height: 49vh;
     background-color: var(--secondary-color);
     position: absolute;
@@ -144,8 +146,8 @@ section{
     text-shadow: 2px 0px var(--secondary-color),-2px 0px var(--secondary-color),1px 1px var(--secondary-color),
     -1px -1px var(--secondary-color),-1px 1px var(--secondary-color),1px -1px var(--secondary-color);
     z-index: 50;
-    
-    
+    left: initial;
+   right: initial;
 }
 #nameHome span{
     font-size: 13vh;
@@ -166,11 +168,11 @@ section{
 #nameHome span{
     transition: all 0.3s;
 }
-#about{
+.about{
     font-size: 20%;
 }
-.nameContent p{
-    z-index: 0;
+#nameHome,#about{
+    
 }
 
 .nameContent::after{
@@ -180,11 +182,12 @@ section{
     border-top:2px solid rgb(88, 87, 87);
     border-bottom: 2px solid rgb(88, 87, 87);
     inset: -2px;
-   
     transition: all 2s;
     
+    
 }
-.hidden {
+
+.hidden{
     display: none;
 }
 
