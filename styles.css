@@ -23,7 +23,7 @@
 }
 html{
     font-size: 70%;
-    
+    overflow-x: hidden;
     
 }
 body{
@@ -112,7 +112,7 @@ section{
 #homeImg{
     position: relative;
     border-radius: 50%;
-    z-index: 100
+    z-index: 50
 }
 #homeImg img{
     width: 25vw;
@@ -124,6 +124,7 @@ section{
     transition: all 1s;
     position: relative;
     left: 2vw;
+    cursor: pointer;
 }
 #homeImg img:hover{
     transform: scale(1.1);
@@ -137,20 +138,20 @@ section{
     height: 49vh;
     background-color: var(--secondary-color);
     position: absolute;
-    padding: 1vw 15vw 5vw 13vw;
+    padding: 5vw 15vw 5vw 13vw;
     
-    font-size: 15vh;
+    font-size: 6vw;
     text-align: center;
     align-items: center;
     justify-content: center;
     text-shadow: 2px 0px var(--secondary-color),-2px 0px var(--secondary-color),1px 1px var(--secondary-color),
     -1px -1px var(--secondary-color),-1px 1px var(--secondary-color),1px -1px var(--secondary-color);
-    z-index: 50;
+    z-index: 25;
     left: initial;
    right: initial;
 }
 #nameHome span{
-    font-size: 13vh;
+    font-size: 5vw;
     color:rgb(88, 87, 87);
 }
 #nameHome{
@@ -158,22 +159,20 @@ section{
     transition: all 0.3s;
 }
 #nameHome:hover{
-    font-size: 13vh;
+    font-size: 5vw;
     color:rgb(88, 87, 87);
 }
 #nameHome:hover span{
-    font-size: 15vh;
+    font-size: 6vw;
     color: var(--color);
 }
 #nameHome span{
     transition: all 0.3s;
 }
 .about{
-    font-size: 20%;
+    font-size: 50%;
 }
-#nameHome,#about{
-    
-}
+
 
 .nameContent::after{
     content: '';

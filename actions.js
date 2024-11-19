@@ -10,11 +10,12 @@ function loadPage(){
 
 function loadEventListeners(){
     $("#homeImg").mouseover(function(){
-        
+        //Increases the width of the nameContent div pseudo after effect ::after
         $("html").css("--after-width","100%");
 
     })
     $("#homeImg").mouseout(function(){
+        //Decreases the width of the nameContent div pseudo after effect ::after
         $("html").css("--after-width","0%");
 
     })
@@ -29,8 +30,6 @@ function imgClick(){
         //sliding effect on image and text content
     if(eventRecords.imgClicked){
         eventRecords.imgClicked = false;
-        console.log("1left "+$topTextBox.css("left"))
-        console.log("1right "+$topTextBox.css("right"))
         $topTextBox.hide("slow").queue(function(next){
             $unclickedText.removeClass("hidden")
             $clickedText.addClass("hidden")
@@ -38,7 +37,7 @@ function imgClick(){
                 "margin-left": "15vw",
                 "margin-right": "0",
                 direction: "ltr",
-               right:"initial"
+               right:"initial" //resets value
                 
                 
             })
@@ -60,7 +59,7 @@ function imgClick(){
             $topTextBox.css({
                 "margin-left": "0",
                 "margin-right": "15vw",
-                direction: "rtl",
+                direction: "rtl", //changes direction the pseduo element ::after of nameContent's direction to right to left
                 right: "0px"
 
             
