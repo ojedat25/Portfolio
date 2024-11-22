@@ -22,7 +22,6 @@
     width: var(--after-width);
 }
 html{
-    font-size: 70%;
     overflow-x: hidden;
     
 }
@@ -38,17 +37,16 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 2% 0 2% 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.5vw;
 }
-.name{
+.nameTopLeft{
     
     position: relative;
     left: -5vw;
-    font-size: 3rem;
     border-bottom: 2px solid white;
     transition:all 0.5s;
     text-shadow: 2px 0px var(--secondary-color),-2px 0px var(--secondary-color),1px 1px var(--secondary-color),
@@ -56,7 +54,7 @@ body{
     
 }
 
-.name:hover{
+.nameTopLeft:hover{
     border-color: var(--main-color);
     transform: scale(1.1);
     color:rgb(88, 87, 87);
@@ -64,12 +62,12 @@ body{
     -1px -1px var(--secondary-color),-1px 1px var(--secondary-color),1px -1px var(--secondary-color);
 }
 
-.name:hover span{
+.nameTopLeft:hover span{
     color:var(--color);
     text-shadow: 2px 0px var(--secondary-color),-2px 0px var(--secondary-color),1px 1px var(--secondary-color),
     -1px -1px var(--secondary-color),-1px 1px var(--secondary-color),1px -1px var(--secondary-color);
 }
-.name span{
+.nameTopLeft span{
     color:rgb(88, 87, 87);
     
     transition: all 0.5s;
@@ -77,13 +75,14 @@ body{
 .navContainer{
     position: relative;
     display:flex;
-    right: -10vw;
-    font-size: 3rem;
+    
+    text-align: right;
+    
 
 }
 .navItem{
     border-bottom: 2px solid white;
-    margin-right: 5vw;
+    margin-right: 4.5vw;
     transition: all 0.5s,border 1s;
 }
 .navItem:hover{
@@ -97,13 +96,13 @@ body{
 }
 section{
     min-height: 100vh;
+    min-width: 100vw;
     position: relative;
     
     
 }
 #Home{
     position: relative;
-    top: 10rem;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -116,7 +115,7 @@ section{
 }
 #homeImg img{
     width: 25vw;
-    height: 50vh;
+    height: 25vw;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid;
@@ -131,15 +130,14 @@ section{
     border-color: var(--color);
 }
 .nameContent{
-    margin-left: 15vw;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    width:85%;
-    height: 49vh;
-    background-color: var(--secondary-color);
-    position: absolute;
+    margin-left: 15vw;
     padding: 5vw 15vw 5vw 13vw;
-    
+    width:85%;
+    height: 24vw;
+    background-color: var(--secondary-color);
     font-size: 6vw;
     text-align: center;
     align-items: center;
@@ -150,24 +148,13 @@ section{
     left: initial;
    right: initial;
 }
-#nameHome span{
-    font-size: 5vw;
-    color:rgb(88, 87, 87);
-}
-#nameHome{
-    
+
+#nameHover{
     transition: all 0.3s;
 }
-#nameHome:hover{
-    font-size: 5vw;
+#nameHover:hover{
+    font-size: 6.5vw;
     color:rgb(88, 87, 87);
-}
-#nameHome:hover span{
-    font-size: 6vw;
-    color: var(--color);
-}
-#nameHome span{
-    transition: all 0.3s;
 }
 .about{
     font-size: 50%;
@@ -185,8 +172,46 @@ section{
     
     
 }
+#skills{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    font-size: 5vw;
+    padding: 2% 0 2% 0;
+    background-color: var(--secondary-color);
+}
+#skills div{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    width: 99%;
+    gap: 2%;
+    
+    
 
+}
+.skill{
+    flex: 0 0 20%;
+    text-align: right;
+
+    
+    
+}
+
+.progressBar{
+    display: flex;
+    background-color: var(--main-color);
+    height: 7vh; 
+    border: 2px solid var(--border-color);
+    font-size: 3vw;
+    align-items: center;
+    justify-content: center;
+    
+}
 .hidden{
     display: none;
 }
-
