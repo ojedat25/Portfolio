@@ -81,11 +81,11 @@ function imgClick(){
 
 
 }
-function formSubmit() {
+function formSubmit(event) {
     console.log("Making Submission")
   let $result = $("#result")
-  this.preventDefault();
-  const formData = new FormData(form);
+  event.preventDefault();
+  const formData = new FormData($("form"));
   const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     $result.text("Please wait...");
