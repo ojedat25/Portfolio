@@ -92,7 +92,9 @@ function formSubmit() {
     $.post('https://api.web3forms.com/submit', json, function (res) {
         console.log(res.message);
         $result.text(res.message)
-    }, "json")
+    }, "json").fail(function (err) {
+        $result.text("Something Went Wrong");
+    })
     form.reset();
     setTimeout(function(){
                 $result.css("display", "none")
