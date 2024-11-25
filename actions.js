@@ -82,14 +82,16 @@ function imgClick(){
 
 }
 function formSubmit() {
+    console.log("Making Submission")
   let $result = $("#result")
   $(this).preventDefault();
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-    $result.html("Please wait...");
+    $result.text("Please wait...");
     $.post('https://api.web3forms.com/submit', json, function (res) {
-        $result.html(res.message)
+        console.log(res.message);
+        $result.text(res.message)
     }, "json")
     form.reset();
     setTimeout(function(){
