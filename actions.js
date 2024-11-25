@@ -20,6 +20,7 @@ function loadEventListeners(){
 
     })
     $("#homeImg").click(imgClick);
+    $("form").submit(formSubmit)
 }
 
 function imgClick(){
@@ -80,4 +81,19 @@ function imgClick(){
 
 
 }
-    
+function formSubmit() {
+  let $result = $("#result")
+  $(this).preventDefault();
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    $result.html("Please wait...");
+    $.post('https://api.web3forms.com/submit', json, function (res) {
+        $result.html(res.message)
+    }, "json")
+    form.reset();
+    setTimeout(function(){
+                $result.css("display", "none")
+            }, 3000);
+}
+

@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link href="styles.css" type="text/css" rel="stylesheet">
-    <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="actions.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="headerContainer">
-    <a href="#Home" class="nameTopLeft">Toni<span> Ojeda</span></a>
-    <nav class="navContainer">
+      <a href="#Home" class="nameTopLeft">Toni<span> Ojeda</span></a>
+      <nav class="navContainer">
         <a href="#Home" class="navItem">Home </a>
+        <a href="#SkillsTitle" class="navItem">Skills</a>
         <a href="#Projects" class="navItem">Projects </a>
         <a href="ResumeFinal2.0.pdf" target="_blank" class="navItem">Resume </a>
         <a href="#Contacts" class="navItem">Contact</a>
-    </nav>
+      </nav>
     </header>
-    <section id="Home" class="about">
-        <div id="homeImg">
-        <img src="SetUpImage.JPG" alt="">
+    <section id="Home">
+      <div id="homeImg">
+        <img src="SetUpImage.JPG" alt="" />
+      </div>
+      <div class="nameContent">
+        <div id="unclicked">
+          <p>I'm <span id="nameHover">Toni Ojeda</span></p>
+          <p>AND THIS IS MY Portfolio WEBSITE, HOPE YOU LIKE IT</p>
         </div>
-        <div class="nameContent">
-            <div id="unclicked">
-            <p>I'm <span id="nameHover">Toni Ojeda</span></p>
-            <p>AND I AM AN AsSPIRING SOFTWARE DEVELOPER </p>
-            
-            </div>
-            <div id="clicked" class="hidden">
-                <p class="about">
-                As an inspiring Software/Web Developer I am always looking for new ways to improve my knowledge, therefore I decided to create this portfolio website using HTML CSS AND jQuery JavaScript <br>Hope it is to your liking 
-                </p>
-            </div>
+        <div id="clicked" class="hidden">
+          <p id="about" style="direction:ltr;">
+            AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS,
+            BACK THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY
+            OWN PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
+          </p>
         </div>
+      </div>
     </section>
-    <section>
-        <div id="skills">
-            <div><p class="skill">Python:</p> <p id="python" class="progressBar" style="width: calc(80% - 22%);">80%</p></div> <!--We substract 22% since the skill text and gap amount to 22% of the total width-->
-            <div><p class="skill">Java:</p> <p id="java" class="progressBar" style="width: calc(75% - 22%);">75%</p></div>
-            <div><p class="skill">HTML:</p> <p id="html" class="progressBar" style="width: calc(80% - 22%);">80%</p></div>
-            <div><p class="skill">CSS:</p> <p id="css" class="progressBar" style="width: calc(65% - 22%);">65%</p></div>
-            <div><p class="skill">JavaScript:</p> <p id="js" class="progressBar" style="width: calc(70% - 22%);">70%</p></div>
+    <section id="Skills">
+      <p id="SkillsTitle">Technical Skills</p>
+      <div id="skillsContainer">
+        <div>
+          <p class="skill">Python:</p>
+          <p id="python" class="progressBar" style="width: calc(80% - 22%)">
+            80%
+          </p>
         </div>
+        <!--We substract 22% since the skill text and gap amount to 22% of the total width-->
+        <div>
+          <p class="skill">Java:</p>
+          <p id="java" class="progressBar" style="width: calc(75% - 22%)">
+            75%
+          </p>
+        </div>
+        <div>
+          <p class="skill">HTML:</p>
+          <p id="html" class="progressBar" style="width: calc(80% - 22%)">
+            80%
+          </p>
+        </div>
+        <div>
+          <p class="skill">CSS:</p>
+          <p id="css" class="progressBar" style="width: calc(65% - 22%)">65%</p>
+        </div>
+        <div>
+          <p class="skill">JavaScript:</p>
+          <p id="js" class="progressBar" style="width: calc(70% - 22%)">70%</p>
+        </div>
+      </div>
     </section>
+    <section id="Contacts">
+      <div id="contactContainer">
+      <form action="https://api.web3forms.com/submit" method="POST">
 
-</body>
+      <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4">
+      <input type="text" class="inputBox" name="full_name" placeholder="Full name" required>
+      <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required>
+      <input type="text" class="inputBox" name="email" placeholder="Email Address" required>
+      <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
+      <button type="submit" id="Submit">Submit</button>
+      <p id="result"></p>
+      </form>
+      </div>
+    </section>
+  </body>
 </html>
