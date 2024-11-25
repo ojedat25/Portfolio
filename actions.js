@@ -85,6 +85,7 @@ function formSubmit(event) {
     console.log("Making Submission")
     let $result = $("#result")
     let form = document.getElementById("Form")
+    $result.removeClass("hidden")
   event.preventDefault();
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
@@ -108,7 +109,7 @@ function formSubmit(event) {
     })
     form.reset();
     setTimeout(function(){
-                $result.css("display", "none")
-            }, 5000);
+                $result.addClass("hidden")
+            }, 3000);
 }
 
