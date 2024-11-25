@@ -21,7 +21,7 @@
       <a href="#Home" class="nameTopLeft">Toni<span> Ojeda</span></a>
       <nav class="navContainer">
         <a href="#Home" class="navItem">Home </a>
-        <a href="#SkillsTitle" class="navItem">Skills</a>
+        <a href="#Skills" class="navItem">Skills</a>
         <a href="#Projects" class="navItem">Projects </a>
         <a href="ResumeFinal2.0.pdf" target="_blank" class="navItem">Resume </a>
         <a href="#Contacts" class="navItem">Contact</a>
@@ -29,7 +29,7 @@
     </header>
     <section id="Home">
       <div id="homeImg">
-        <img src="SetUpImage.JPG" alt="" />
+        <img src="SetUpImage.JPG" alt="setUpImg" id="">
       </div>
       <div class="nameContent">
         <div id="unclicked">
@@ -37,13 +37,14 @@
           <p>AND THIS IS MY Portfolio WEBSITE, HOPE YOU LIKE IT</p>
         </div>
         <div id="clicked" class="hidden">
-          <p id="about" style="direction:ltr;">
+          <p style="direction:ltr; font-size: 2.5vw;">
             AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS,
             BACK THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY
             OWN PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
           </p>
         </div>
       </div>
+      
     </section>
     <section id="Skills">
       <p id="SkillsTitle">Technical Skills</p>
@@ -78,6 +79,7 @@
       </div>
     </section>
     <section id="Contacts">
+      <h1 style="text-align: center; font-size:5vw;">Contact Me!</h1>
       <div id="contactContainer">
       <form action="https://api.web3forms.com/submit" method="POST" id="Form">
       <input type="hidden" name="subject" value="New Submission from Web3Forms">
@@ -85,7 +87,7 @@
       <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4">
       <input type="text" class="inputBox" name="full_name" placeholder="Full name" required>
       <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required>
-      <input type="text" class="inputBox" name="email" placeholder="Email Address" required>
+      <input type="email" class="inputBox" name="email" placeholder="Email Address" required>
       <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
       <button type="submit" id="Submit">Submit</button>
       <p id="result"></p>
