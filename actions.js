@@ -85,7 +85,7 @@ function formSubmit(event) {
     console.log("Making Submission")
   let $result = $("#result")
   event.preventDefault();
-  const formData = new FormData($("#Form"));
+  const formData = new FormData(document.getElementById("Form"));
   const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     $result.text("Please wait...");
