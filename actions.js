@@ -20,7 +20,7 @@ function loadEventListeners(){
 
     })
     $("#homeImg").click(imgClick);
-    $("form").submit(formSubmit)
+    $("form").on("submit",formSubmit)
 }
 
 function imgClick(){
@@ -81,7 +81,7 @@ function imgClick(){
 
 
 }
-function formSubmit() {
+function formSubmit(e) {
     console.log("Making Submission")
   let $result = $("#result")
   $(this).preventDefault();
