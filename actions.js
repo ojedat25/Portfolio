@@ -90,15 +90,25 @@ function formSubmit(event) {
   const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     $result.text("Please wait...");
-    $.post('https://api.web3forms.com/submit', json, function (res) {
-        console.log(res.message);
-        $result.text(res.message)
-    }, "json").fail(function (err) {
+    $.ajax({
+        url: 'https://api.web3forms.com/submit',
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        datatype: "json",
+        data: json,
+        success: function (res) {
+            console.log(res.message);
+            $result.text(res.message)
+        }
+    }).fail(function (err) {
         $result.text("Something Went Wrong");
     })
     form.reset();
     setTimeout(function(){
                 $result.css("display", "none")
-            }, 3000);
+            }, 5000);
 }
 
