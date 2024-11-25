@@ -20,7 +20,7 @@ function loadEventListeners(){
 
     })
     $("#homeImg").click(imgClick);
-    $("form").on("submit",formSubmit)
+    $("#Form").on("submit",formSubmit)
 }
 
 function imgClick(){
@@ -85,7 +85,7 @@ function formSubmit(event) {
     console.log("Making Submission")
   let $result = $("#result")
   event.preventDefault();
-  const formData = new FormData($("form"));
+  const formData = new FormData($("#Form"));
   const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     $result.text("Please wait...");
