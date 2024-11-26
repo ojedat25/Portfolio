@@ -7,14 +7,8 @@
     <link href="styles.css" type="text/css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="actions.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
     <header class="headerContainer">
@@ -29,7 +23,7 @@
     </header>
     <section id="Home">
       <div id="homeImg">
-        <img src="SetUpImage.JPG" alt="setUpImg" id="">
+        <img src="SetUpImage.JPG" alt="setUpImg" id="" />
       </div>
       <div class="nameContent">
         <div id="unclicked">
@@ -37,36 +31,29 @@
           <p>AND THIS IS MY Portfolio WEBSITE, HOPE YOU LIKE IT</p>
         </div>
         <div id="clicked" class="hidden">
-          <p style="direction:ltr; font-size: 2.5vw;">
-            AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS,
-            BACK THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY
-            OWN PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
+          <p style="direction: ltr; font-size: 2.5vw">
+            AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS, BACK
+            THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY OWN
+            PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
           </p>
         </div>
       </div>
-      
     </section>
     <section id="Skills">
       <p id="SkillsTitle">Technical Skills</p>
       <div id="skillsContainer">
         <div>
           <p class="skill">Python:</p>
-          <p id="python" class="progressBar" style="width: calc(80% - 22%)">
-            80%
-          </p>
+          <p id="python" class="progressBar" style="width: calc(80% - 22%)">80%</p>
         </div>
         <!--We substract 22% since the skill text and gap amount to 22% of the total width-->
         <div>
           <p class="skill">Java:</p>
-          <p id="java" class="progressBar" style="width: calc(75% - 22%)">
-            75%
-          </p>
+          <p id="java" class="progressBar" style="width: calc(75% - 22%)">75%</p>
         </div>
         <div>
           <p class="skill">HTML:</p>
-          <p id="html" class="progressBar" style="width: calc(80% - 22%)">
-            80%
-          </p>
+          <p id="html" class="progressBar" style="width: calc(80% - 22%)">80%</p>
         </div>
         <div>
           <p class="skill">CSS:</p>
@@ -79,19 +66,19 @@
       </div>
     </section>
     <section id="Contacts">
-      <h1 style="text-align: center; font-size:5vw;">Contact Me!</h1>
+      <h1 style="text-align: center; font-size: 5vw">Contact Me!</h1>
       <div id="contactContainer">
-      <form action="https://api.web3forms.com/submit" method="POST" id="Form">
-      <input type="hidden" name="subject" value="New Submission from Web3Forms">
-      <input type="checkbox" name="botcheck" id="" style="display: none;">
-      <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4">
-      <input type="text" class="inputBox" name="full_name" placeholder="Full name" required>
-      <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required>
-      <input type="email" class="inputBox" name="email" placeholder="Email Address" required>
-      <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
-      <button type="submit" id="Submit">Submit</button>
-      <p id="result"></p>
-      </form>
+        <form action="https://api.web3forms.com/submit" method="POST" id="Form">
+          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+          <input type="checkbox" name="botcheck" id="" style="display: none" />
+          <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4" />
+          <input type="text" class="inputBox" name="full_name" placeholder="Full name" required />
+          <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required />
+          <input type="email" class="inputBox" name="email" placeholder="Email Address" required />
+          <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
+          <button type="submit" id="Submit">Submit</button>
+          <p id="result"></p>
+        </form>
       </div>
     </section>
   </body>
