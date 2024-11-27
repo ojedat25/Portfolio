@@ -89,7 +89,7 @@ function formSubmit(event) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      "Accept": "application/json",
     },
     datatype: "json",
     data: json,

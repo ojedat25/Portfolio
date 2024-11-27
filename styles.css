@@ -7,6 +7,7 @@
   color: var(--color);
   outline: none;
   border: none;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -96,14 +97,13 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 50vw;
   min-width: 100vw;
 }
 
 #Home {
   position: relative;
   display: flex;
-  min-height: 100vh;
   align-items: center;
 }
 
@@ -250,6 +250,7 @@ section {
   width: 100%;
   color: black;
   font-size: larger;
+  padding-left: 0.5%;
 }
 
 #Form button {
@@ -258,6 +259,8 @@ section {
   border-radius: 5px;
   color: var(--main-color);
   transition: all 0.2s;
+  cursor:pointer;
+  font-size: 2em;
 }
 
 #Form button:hover {
@@ -266,4 +269,16 @@ section {
 
 .hidden {
   display: none;
+}
+#LogoContainer{
+  justify-content: left;
+  width: 50%;
+}
+#LogoContainer i{
+  text-align: left;
+  font-size: 4vw;
+  transition: all .5s;
+}
+#LogoContainer i:hover{
+  transform: scale(1.1,1.1);
 }
