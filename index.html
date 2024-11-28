@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link href="styles.css" type="text/css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="actions.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
@@ -22,7 +21,7 @@
         <a href="#Contacts" class="navItem">Contact</a>
       </nav>
     </header>
-    <section id="Home">
+    <section id="Home" class="hiddenAnimation">
       <div id="homeImg">
         <img src="SetUpImage.JPG" alt="setUpImg" id="" />
       </div>
@@ -40,7 +39,7 @@
         </div>
       </div>
     </section>
-    <section id="Skills">
+    <section id="Skills" class="hiddenAnimation">
       <p id="SkillsTitle">Technical Skills</p>
       <div id="skillsContainer">
         <div>
@@ -66,7 +65,7 @@
         </div>
       </div>
     </section>
-    <section id="Contacts">
+    <section id="Contacts" class="hiddenAnimation">
       <h1 style="text-align: center; font-size: 5vw">Contact Me!</h1>
       <div id="contactContainer">
         <form action="https://api.web3forms.com/submit" method="POST" id="Form">

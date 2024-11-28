@@ -1,9 +1,32 @@
 //Waits until DOM is fully loaded
 $(loadPage);
+
+
+
+
+
 var eventRecords = [{ imgClicked: false }];
 
 function loadPage() {
   loadEventListeners();
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(`${entry.target.id} is ${entry.isIntersecting ? 'visible' : 'not visible'}`);
+    if(entry.isIntersecting){
+      //console.log(entry);
+      entry.target.classList.add("showAnimation");
+      
+    }
+    else{
+      entry.target.classList.remove("showAnimation");
+      
+
+    }
+  });
+});
+const hiddenElements = document.querySelectorAll(".hiddenAnimation");
+hiddenElements.forEach((el) => observer.observe(el));
+const skillsSection = document.querySelector("#Skills");
 }
 
 function loadEventListeners() {
