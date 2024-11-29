@@ -7,7 +7,7 @@
   font-family: var(--main-font);
   color: var(--color);
   outline: none;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 
 
 }
@@ -27,7 +27,6 @@
 
 html {
   overflow-x: hidden;
-  scroll-snap-type: y proximity;
 }
 
 body {
@@ -102,8 +101,6 @@ body {
 
 section {
   min-height: 100vh;
-  scroll-snap-align: end;
-  
 }
 
 #Home {
