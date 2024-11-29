@@ -284,6 +284,8 @@ section {
 #LogoContainer{
   justify-content: left;
   width: 50%;
+  display: flex;
+  align-items: center;
 }
 #LogoContainer i{
   text-align: left;
