@@ -1,33 +1,26 @@
 //Waits until DOM is fully loaded
 $(loadPage);
 
-
-
-
-
 var eventRecords = [{ imgClicked: false }];
 
 function loadPage() {
   loadEventListeners();
-  const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(`${entry.target.id} is ${entry.isIntersecting ? 'visible' : 'not visible'}`);
-    if(entry.isIntersecting){
-      //console.log(entry);
-      entry.target.classList.add("showAnimation");
-      
-    }
-    else{
-      entry.target.classList.remove("showAnimation");
-      
-
-    }
-  });
-});
-const hiddenElements = document.querySelectorAll(".hiddenAnimation");
-hiddenElements.forEach((el) => observer.observe(el));
-const skillsSection = document.querySelector("#Skills");
+  window.addEventListener("scroll", ScrollEvent);
 }
+
+function ScrollEvent() {
+  const nodes = document.querySelectorAll(".progressBar")
+  const scroll = window.scrollY / 5;
+  
+  nodes.forEach((node) => {
+    const width = Math.min(parseInt(node.textContent.substring(0,2)),scroll);
+    node.style.width = (width - 22) + "%";
+    console.log(node.style.width);
+  });
+
+
+}
+
 
 function loadEventListeners() {
   $("#homeImg").mouseover(function () {
@@ -72,8 +65,6 @@ function imgClick() {
     });
   } else {
     eventRecords.imgClicked = true;
-    console.log("left " + $topTextBox.css("left"));
-    console.log("right " + $topTextBox.css("right"));
     $topTextBox.hide("slow").queue(function (next) {
       $clickedText.removeClass("hidden");
       $unclickedText.addClass("hidden");
