@@ -15,7 +15,6 @@ function ScrollEvent() {
   nodes.forEach((node) => {
     const width = Math.min(parseInt(node.textContent.substring(0,2)),scroll);
     node.style.width = (width - 22) + "%";
-    console.log(node.style.width);
   });
 
 
