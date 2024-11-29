@@ -10,11 +10,21 @@ function loadPage() {
 
 function ScrollEvent() {
   const nodes = document.querySelectorAll(".progressBar")
-  const scroll = window.scrollY / 5;
-  
+  const scroll = window.scrollY/5;
+  const sectionTop = document.querySelector("#Skills").getBoundingClientRect().top
+  const sectionBottom = document.querySelector("#Skills").getBoundingClientRect().bottom
+  console.log("SectionTop: "+ sectionTop);
+  console.log("SectionBottom: "+sectionBottom);
+  console.log("ScrollY: "+scroll);
   nodes.forEach((node) => {
     const width = Math.min(parseInt(node.textContent.substring(0,2)),scroll);
+    if(sectionBottom != (sectionBottom/2)){
     node.style.width = (width - 22) + "%";
+    
+    }
+    else{
+      node.style.width = 0 + "%";
+    }
   });
 
 
