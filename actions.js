@@ -19,10 +19,10 @@ function ScrollEvent() {
     const width = Math.min(parseInt(node.textContent.substring(0, 2)), screenTop);
     if (screenBottom > nodeTop && screenTop < nodeBottom) {
       node.style.width = width - 22 + '%';
-      console.log('node width: ' + node.style.width);
+      
     } else {
       node.style.width = 0 + '%';
-      console.log('here');
+      
     }
   });
   // console.log("SectionTop: "+ sectionTop);
