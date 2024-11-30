@@ -101,6 +101,8 @@ body {
 
 section {
   min-height: 100vh;
+  min-width: 100vw;
+
 }
 
 #Home {
@@ -113,7 +115,6 @@ section {
   position: relative;
   border-radius: 50%;
   z-index: 50;
-  left: 2vw;
   
 }
 
@@ -217,7 +218,7 @@ section {
   font-size: 3vw;
   align-items: center;
   justify-content: center;
-  transition: width 2s;
+  transition: width 1s;
 }
 
 
@@ -295,3 +296,22 @@ section {
 #LogoContainer i:hover{
   transform: scale(1.1,1.1);
 }
+
+#Home .animatedDiv{
+  transition: all 1s;
+  transform: translateX(0);
+  align-items: center;
+}
+#Contacts .animatedDiv{
+  transition: all 1s;
+  transform: translateX(0);
+}
+
+#Home .divAnimation{
+  transform: translateX(100vw);
+}
+
+#Contacts .divAnimation{
+  transform: translateX(-100vw);
+}
+
