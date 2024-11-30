@@ -29,7 +29,7 @@ function ScrollEvent() {
   // console.log("SectionTop: "+ sectionTop);
   // console.log("SectionBottom: "+sectionBottom);
   // console.log("ScrollY: "+scroll);
-  for (let i = 3; i < mainNode.length - 1; i++) {
+  for (let i = 3; i < mainNode.length; i++) {
     const sectionTop = $(mainNode[i]).offset().top;
     const sectionBottom = sectionTop + $(mainNode[i]).outerHeight(); //getting the sections bottom position
 
