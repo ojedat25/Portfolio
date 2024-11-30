@@ -38,11 +38,11 @@ function ScrollEvent() {
         $(mainNode[3]).children('.animatedDiv').removeClass('divAnimation');
       } else {
         $(mainNode[5]).children('.animatedDiv').removeClass('divAnimation');
-        console.log($(mainNode[5]))
+        console.log("removing class")
       }
     } else if ($(mainNode[i]).attr('id') != 'Skills') {
       $(mainNode[i]).children('.animatedDiv').addClass('divAnimation');
-      console.log($(mainNode[5]))
+      console.log("adding class")
     }
   }
 }
