@@ -1,49 +1,57 @@
-//Waits until DOM is fully loaded
+// Waits until the DOM is fully loaded
 $(loadPage);
 
-var eventRecords = [{ imgClicked: false }];
+// Object to track event states
+var eventRecords = { imgClicked: false };
 
+// Main function called after DOM is loaded
 function loadPage() {
-  loadEventListeners();
-  $(window).scroll(ScrollEvent);
-  ScrollEvent();
+  loadEventListeners(); // Attach all event listeners
+  $(window).scroll(ScrollEvent); // Trigger ScrollEvent on scroll
+  ScrollEvent(); // Trigger ScrollEvent once initially
 }
 
+// Function to handle scroll events
 function ScrollEvent() {
-  const mainNode = $('body,html').children(); //list of direct children
-  // console.log(mainNode);
-  const nodes = document.querySelectorAll('.progressBar');
-  const screenTop = $(window).scrollTop(); //how far we have scrolled from the top
-  const screenBottom = screenTop + $(window).innerHeight();
-  for (let i = 3; i < mainNode.length; i++) {
-    const sectionTop = $(mainNode[i]).offset().top;
-    const sectionBottom = (sectionTop + $(mainNode[i]).outerHeight()); //getting the sections bottom position
-    // console.log(`ScreenTop: ${screenTop}, ScreenBottom: ${screenBottom}`)
-    // console.log(`Main Top: ${$(mainNode[3]).offset().top}, Main Bottom: ${$(mainNode[3]).offset().top + $(mainNode[3]).outerHeight()}`)
-    // console.log(`Skills Top: ${$(mainNode[4]).offset().top}, Skills Bottom: ${$(mainNode[4]).offset().top + $(mainNode[4]).outerHeight()}`)
-    // console.log(`Contacts Top: ${$(mainNode[5]).offset().top}, Contacts Bottom: ${$(mainNode[5]).offset().top + $(mainNode[5]).outerHeight()}`)
+  const sections = $("body,html").children(); // Get list of all direct children of <body> and <html>
+  const progressBars = document.querySelectorAll(".progressBar"); // Select all progress bars
+  const screenTop = $(window).scrollTop(); // Distance scrolled from the top of the viewport
+  const screenBottom = screenTop + $(window).innerHeight(); // Bottom of the viewport
+
+  // Iterate over sections starting from index 3
+  for (let i = 3; i < sections.length; i++) {
+    const sectionTop = $(sections[i]).offset().top; // Top position of the section
+    const sectionBottom = sectionTop + $(sections[i]).outerHeight(); // Bottom position of the section
+
+    // Check if the section is within the viewport
     if (screenBottom > sectionTop && screenTop < sectionBottom) {
-      //True if the top of the screen measurement (starts at 0 and increases as you go down) is less than the bottom of the section
-      if ($(mainNode[i]).attr('id') == 'Home') {
-        console.log("In Home Section")
-        $(mainNode[3]).children('.animatedDiv').addClass('sectionAnimation');
-      } else if ($(mainNode[i]).attr('id') == 'Skills') {
-        console.log("Inisde the Skills Section")
-        nodes.forEach((bar) => {
+      // Handle animations for the Home section
+      if ($(sections[i]).attr("id") == "Home") {
+        $(sections[3]).children(".animatedDiv").addClass("sectionAnimation");
+      }
+      // Handle progress bar animations for the Skills section
+      else if ($(sections[i]).attr("id") == "Skills") {
+        progressBars.forEach((bar) => {
           bar.classList.add("progressBarAnimation");
         });
-      } else {
-        console.log("In Form section")
-        $(mainNode[5]).children('.animatedDiv').addClass('sectionAnimation');
       }
-    } else {
-      $(mainNode[i]).children('.animatedDiv').removeClass('sectionAnimation');
-      // if ($(mainNode[i]).attr('id') == 'Home') {
-      //   eventRecords.imgClicked = true;
-      //   imgClick();
-      //  }
-      if ($(mainNode[i]).attr('id') == 'Skills') {
-        nodes.forEach((bar) => {
+      // Handle animations for other sections
+      else {
+        $(sections[5]).children(".animatedDiv").addClass("sectionAnimation");
+      }
+    }
+    // If the section is not in the viewport, remove animations
+    else {
+      $(sections[i]).children(".animatedDiv").removeClass("sectionAnimation");
+
+      // Trigger imgClick behavior if the image has been clicked
+      if (eventRecords.imgClicked) {
+        imgClick();
+      }
+
+      // Remove progress bar animations for the Skills section
+      if ($(sections[i]).attr("id") == "Skills") {
+        progressBars.forEach((bar) => {
           bar.classList.remove("progressBarAnimation");
         });
       }
@@ -51,106 +59,116 @@ function ScrollEvent() {
   }
 }
 
+// Attach event listeners for various interactions
 function loadEventListeners() {
-  $('#homeImg').mouseover(function () {
-    //Increases the width of the nameContent div pseudo after effect ::after
-    $('html').css('--after-width', '100%');
+  $("#homeImg").mouseover(function () {
+    // Expands the width of the ::after pseudo-element in the nameContent div
+    $("html").css("--after-width", "100%");
   });
-  $('#homeImg').mouseout(function () {
-    //Decreases the width of the nameContent div pseudo after effect ::after
-    $('html').css('--after-width', '0%');
+
+  $("#homeImg").mouseout(function () {
+    // Shrinks the width of the ::after pseudo-element in the nameContent div
+    $("html").css("--after-width", "0%");
   });
-  $('#homeImg').click(imgClick);
-  $('#Form').on('submit', formSubmit);
+
+  $("#homeImg").click(imgClick); // Trigger imgClick on image click
+  $("#Form").on("submit", formSubmit); // Handle form submission
 }
 
+// Toggles the sliding animation and content updates for the home image
 function imgClick() {
-  let $topTextBox = $('.nameContent');
-  let $topImg = $('#homeImg');
-  let $unclickedText = $('#unclicked');
-  let $clickedText = $('#clicked');
-  //sliding effect on image and text content
-  
-  if (eventRecords.imgClicked) {
-    
-    eventRecords.imgClicked = false;
-    $topTextBox.hide('slow').queue(function (next) {
-      $unclickedText.removeClass('hidden');
-      $clickedText.addClass('hidden');
-      $topTextBox.css({
-        'margin-left': '15vw',
-        'margin-right': '0',
-        direction: 'ltr',
-        right: 'initial', //resets value
-      });
-      $topImg.animate(
-        {
-          right: '0px',
-        },
-        300,
-        function () {
-          $topTextBox.show('slow');
-          next();
-        }
-      );
-    });
-    console.log("top Img right: " + $topImg.css("right"));
-  } else {
-    console.log("clicked");
-    eventRecords.imgClicked = true;
-    $topTextBox.hide('slow').queue(function (next) {
-      $clickedText.removeClass('hidden');
-      $unclickedText.addClass('hidden');
-      $topTextBox.css({
-        'margin-left': '0',
-        'margin-right': '15vw',
-        direction: 'rtl', //changes direction the pseduo element ::after of nameContent's direction to right to left
-        right: '0px',
-      });
+  let $topTextBox = $(".nameContent"); // Text content above the image
+  let $topImg = $("#homeImg"); // The main image
+  let $unclickedText = $("#unclicked"); // Text shown when not clicked
+  let $clickedText = $("#clicked"); // Text shown when clicked
 
+  // If the image is currently clicked
+  if (eventRecords.imgClicked) {
+    eventRecords.imgClicked = false; // Reset state
+    $topTextBox.hide("slow").queue(function (next) {
+      $unclickedText.removeClass("hidden");
+      $clickedText.addClass("hidden");
+      $topTextBox.css({
+        "margin-left": "15vw",
+        "margin-right": "0",
+        direction: "ltr", // Reset text direction to left-to-right
+        right: "initial", // Reset positioning
+      });
       $topImg.animate(
         {
-          right: '-687.12px',
+          right: "0px", // Slide the image back to its original position
         },
         300,
         function () {
-          $topTextBox.show('slow');
+          $topTextBox.show("normal"); // Show the text content after the animation
         }
       );
       next();
     });
-    console.log("top Img right: " + $topImg.css("right"));
   }
-  
+  // If the image is not clicked
+  else {
+    eventRecords.imgClicked = true; // Set state
+    $topTextBox.hide("slow").queue(function (next) {
+      $clickedText.removeClass("hidden");
+      $unclickedText.addClass("hidden");
+      $topTextBox.css({
+        "margin-left": "0",
+        "margin-right": "15vw",
+        direction: "rtl", // Change text direction to right-to-left
+        right: "0px",
+      });
+      $topImg.animate(
+        {
+          right: "-70vw", // Slide the image out of view
+        },
+        300,
+        function () {
+          $topTextBox.show("normal"); // Show the text content after the animation
+        }
+      );
+      next();
+    });
+  }
 }
+
+// Handles the form submission process
 function formSubmit(event) {
-  console.log('Making Submission');
-  let $result = $('#result');
-  let form = document.getElementById('Form');
-  $result.removeClass('hidden');
-  event.preventDefault();
+  console.log("Making Submission");
+  let $result = $("#result"); // Element to display form submission result
+  let form = document.getElementById("Form"); // Form element
+  $result.removeClass("hidden"); // Show the result area
+  event.preventDefault(); // Prevent default form submission behavior
+
+  // Collect form data
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
-  $result.text('Please wait...');
+
+  $result.text("Please wait..."); // Show waiting message
+
+  // Send form data via AJAX
   $.ajax({
-    url: 'https://api.web3forms.com/submit',
-    method: 'POST',
+    url: "https://api.web3forms.com/submit", // Form submission endpoint
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    datatype: 'json',
+    datatype: "json",
     data: json,
     success: function (res) {
-      console.log(res.message);
-      $result.text(res.message);
+      console.log(res.message); // Log the server response
+      $result.text(res.message); // Display the server response
     },
   }).fail(function (err) {
-    $result.text('Something Went Wrong');
+    $result.text("Something Went Wrong"); // Show error message on failure
   });
-  form.reset();
+
+  form.reset(); // Reset the form fields
+
+  // Hide the result message after 3 seconds
   setTimeout(function () {
-    $result.addClass('hidden');
+    $result.addClass("hidden");
   }, 3000);
 }
