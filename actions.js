@@ -30,7 +30,6 @@ function closeVideo(){
   const videoPlayer = $("#videoPlayer")[0];
   videoPlayer.pause();
     videoPlayer.currentTime = 0;
-    console.log("done");
   
 }
 // Function to handle scroll events
@@ -44,7 +43,7 @@ function ScrollEvent() {
   for (let i = 3; i < sections.length; i++) {
     const sectionTop = $(sections[i]).offset().top; // Top position of the section
     const sectionBottom = sectionTop + $(sections[i]).outerHeight(); // Bottom position of the section
-    console.log($(sections[i]).attr("id"))
+
     // Check if the section is within the viewport
     if (screenBottom > sectionTop && screenTop < sectionBottom) {
       // Handle animations for the Home section
@@ -76,7 +75,6 @@ function ScrollEvent() {
         imgClick();
       }
       if ($(sections[i]).attr("id") == "Projects" && $(".videoWindow").css("display") == "flex") {
-        console.log($(".videoWindow").css("display"))
         closeVideo();
       }
       // Remove progress bar animations for the Skills section
@@ -126,7 +124,8 @@ function imgClick() {
       });
       $topImg.animate(
         {
-          right: "0px", // Slide the image back to its original position
+           // Slide the image back to its original position
+          left: "2vw"
         },
         300,
         function () {
@@ -150,7 +149,8 @@ function imgClick() {
       });
       $topImg.animate(
         {
-          right: "-70vw", // Slide the image out of view
+          left: "72vw", // Slide the image out of view
+          
         },
         300,
         function () {
