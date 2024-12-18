@@ -1,4 +1,7 @@
+/* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Universal styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +11,9 @@
   color: var(--color);
   outline: none;
   scroll-behavior: smooth !important;
-
-
 }
 
+/* Root Variables */
 :root {
   --border-color: rgb(112, 112, 112);
   --main-color: rgb(30, 30, 30);
@@ -20,20 +22,39 @@
   --color: rgba(184, 184, 184, 0.89);
   --after-width: 0%;
 }
+/* Progress Bar, width = calc(percentage - 22%) */
+.bar65{
+  --bar-width: 43%;
+}
+.bar70{
+  --bar-width: 48%;
+}
+.bar75{
+  --bar-width: 53%;
+}
+.bar80{
+  --bar-width: 58%;
+}
 
+
+/* Pseudo-elements */
 ::after {
   width: var(--after-width);
 }
 
+/* HTML & Body */
 html {
   overflow-x: hidden;
 }
 
 body {
   background-color: var(--main-color);
-  
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
+/* Header Container */
 .headerContainer {
   z-index: 100;
   position: fixed;
@@ -49,6 +70,7 @@ body {
   font-size: 2.5vw;
 }
 
+/* Name Section in Header */
 .nameTopLeft {
   position: relative;
   margin-left: 4%;
@@ -74,17 +96,17 @@ body {
 
 .nameTopLeft span {
   color: rgb(88, 87, 87);
-
   transition: all 0.5s;
 }
 
+/* Navigation Container */
 .navContainer {
   position: relative;
   display: flex;
-
   text-align: right;
 }
 
+/* Navigation Items */
 .navItem {
   border-bottom: 2px solid white;
   margin-right: 4.5vw;
@@ -99,23 +121,25 @@ body {
   border-color: var(--main-color);
 }
 
+/* Section Styling */
 section {
   min-height: 100vh;
   min-width: 100vw;
-
+  border: 2px dashed white;
 }
 
+/* Home Section */
 #Home {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+/* Home Image Styling */
 #homeImg {
   position: relative;
   border-radius: 50%;
   z-index: 50;
-  
 }
 
 #homeImg img {
@@ -128,7 +152,6 @@ section {
   border-color: var(--secondary-color);
   transition: all 1s;
   position: relative;
-  
   cursor: pointer;
 }
 
@@ -137,6 +160,7 @@ section {
   border-color: var(--color);
 }
 
+/* Name Content in Home Section */
 .nameContent {
   position: absolute;
   display: flex;
@@ -157,6 +181,7 @@ section {
   right: initial;
 }
 
+/* Name Hover Animation */
 #nameHover {
   transition: all 0.3s;
 }
@@ -176,6 +201,7 @@ section {
   transition: all 2s;
 }
 
+/* Skills Section */
 #Skills {
   position: relative;
   display: flex;
@@ -184,6 +210,7 @@ section {
   min-height: 100vh;
 }
 
+/* Skills Container */
 #skillsContainer {
   display: flex;
   flex-direction: column;
@@ -205,6 +232,7 @@ section {
   gap: 2%;
 }
 
+/* Skill Progress Bars */
 .skill {
   flex: 0 0 20%;
   text-align: right;
@@ -213,6 +241,7 @@ section {
 .progressBar {
   display: flex;
   background-color: var(--main-color);
+  width:0;
   height: 7vh;
   border: 2px solid var(--border-color);
   font-size: 3vw;
@@ -221,12 +250,13 @@ section {
   transition: width 1s;
 }
 
-
+/* Skills Title */
 #SkillsTitle {
   font-size: 3vw;
   padding-left: 1%;
 }
 
+/* Contact Section */
 #Contacts {
   display: flex;
   align-items: center;
@@ -244,6 +274,7 @@ section {
   position: relative;
 }
 
+/* Form Section */
 #Form {
   background-color: var(--secondary-color);
   display: flex;
@@ -271,7 +302,7 @@ section {
   border-radius: 5px;
   color: var(--main-color);
   transition: all 0.2s;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 2em;
 }
 
@@ -279,39 +310,45 @@ section {
   transform: scale(1.1, 1.1);
 }
 
+/* Hidden Class */
 .hidden {
   display: none;
 }
-#LogoContainer{
+
+/* Logo Container */
+#LogoContainer {
   justify-content: left;
   width: 50%;
   display: flex;
   align-items: center;
 }
-#LogoContainer i{
+
+#LogoContainer i {
   text-align: left;
   font-size: 4vw;
   transition: all .5s;
 }
-#LogoContainer i:hover{
-  transform: scale(1.1,1.1);
+
+#LogoContainer i:hover {
+  transform: scale(1.1, 1.1);
 }
 
-#Home .animatedDiv{
+/* Animations */
+#Home .animatedDiv {
   transition: all 1s;
-  transform: translateX(0);
+  transform: translateX(100vw);
   align-items: center;
 }
-#Contacts .animatedDiv{
+
+#Contacts .animatedDiv {
   transition: all 1s;
-  transform: translateX(0);
-}
-
-#Home .divAnimation{
-  transform: translateX(100vw);
-}
-
-#Contacts .divAnimation{
   transform: translateX(-100vw);
 }
 
+#Home .sectionAnimation, #Contacts .sectionAnimation{
+  transform: translateX(0);
+}
+
+.progressBarAnimation{
+  width: var(--bar-width);
+}

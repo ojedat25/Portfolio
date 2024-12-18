@@ -6,43 +6,47 @@ var eventRecords = [{ imgClicked: false }];
 function loadPage() {
   loadEventListeners();
   $(window).scroll(ScrollEvent);
+  ScrollEvent();
 }
 
 function ScrollEvent() {
   const mainNode = $('body,html').children(); //list of direct children
-  console.log(mainNode);
+  // console.log(mainNode);
   const nodes = document.querySelectorAll('.progressBar');
   const screenTop = $(window).scrollTop(); //how far we have scrolled from the top
   const screenBottom = screenTop + $(window).innerHeight();
-  const nodeTop = $('#Skills').offset().top;
-  const nodeBottom = $('#Skills').outerHeight() + nodeTop;
-  nodes.forEach((node) => {
-    const width = Math.min(parseInt(node.textContent.substring(0, 2)), screenTop);
-    if (screenBottom > nodeTop && screenTop < nodeBottom) {
-      node.style.width = width - 22 + '%';
-      
-    } else {
-      node.style.width = 0 + '%';
-      
-    }
-  });
-  // console.log("SectionTop: "+ sectionTop);
-  // console.log("SectionBottom: "+sectionBottom);
-  // console.log("ScrollY: "+scroll);
   for (let i = 3; i < mainNode.length; i++) {
     const sectionTop = $(mainNode[i]).offset().top;
-    const sectionBottom = sectionTop + $(mainNode[i]).outerHeight(); //getting the sections bottom position
-
+    const sectionBottom = (sectionTop + $(mainNode[i]).outerHeight()); //getting the sections bottom position
+    // console.log(`ScreenTop: ${screenTop}, ScreenBottom: ${screenBottom}`)
+    // console.log(`Main Top: ${$(mainNode[3]).offset().top}, Main Bottom: ${$(mainNode[3]).offset().top + $(mainNode[3]).outerHeight()}`)
+    // console.log(`Skills Top: ${$(mainNode[4]).offset().top}, Skills Bottom: ${$(mainNode[4]).offset().top + $(mainNode[4]).outerHeight()}`)
+    // console.log(`Contacts Top: ${$(mainNode[5]).offset().top}, Contacts Bottom: ${$(mainNode[5]).offset().top + $(mainNode[5]).outerHeight()}`)
     if (screenBottom > sectionTop && screenTop < sectionBottom) {
+      //True if the top of the screen measurement (starts at 0 and increases as you go down) is less than the bottom of the section
       if ($(mainNode[i]).attr('id') == 'Home') {
-        $(mainNode[3]).children('.animatedDiv').removeClass('divAnimation');
+        console.log("In Home Section")
+        $(mainNode[3]).children('.animatedDiv').addClass('sectionAnimation');
+      } else if ($(mainNode[i]).attr('id') == 'Skills') {
+        console.log("Inisde the Skills Section")
+        nodes.forEach((bar) => {
+          bar.classList.add("progressBarAnimation");
+        });
       } else {
-        $(mainNode[5]).children('.animatedDiv').removeClass('divAnimation');
-        console.log("removing class")
+        console.log("In Form section")
+        $(mainNode[5]).children('.animatedDiv').addClass('sectionAnimation');
       }
-    } else if ($(mainNode[i]).attr('id') != 'Skills') {
-      $(mainNode[i]).children('.animatedDiv').addClass('divAnimation');
-      console.log("adding class")
+    } else {
+      $(mainNode[i]).children('.animatedDiv').removeClass('sectionAnimation');
+      // if ($(mainNode[i]).attr('id') == 'Home') {
+      //   eventRecords.imgClicked = true;
+      //   imgClick();
+      //  }
+      if ($(mainNode[i]).attr('id') == 'Skills') {
+        nodes.forEach((bar) => {
+          bar.classList.remove("progressBarAnimation");
+        });
+      }
     }
   }
 }
@@ -66,7 +70,9 @@ function imgClick() {
   let $unclickedText = $('#unclicked');
   let $clickedText = $('#clicked');
   //sliding effect on image and text content
+  
   if (eventRecords.imgClicked) {
+    
     eventRecords.imgClicked = false;
     $topTextBox.hide('slow').queue(function (next) {
       $unclickedText.removeClass('hidden');
@@ -79,7 +85,7 @@ function imgClick() {
       });
       $topImg.animate(
         {
-          right: '+=70vw',
+          right: '0px',
         },
         300,
         function () {
@@ -88,7 +94,9 @@ function imgClick() {
         }
       );
     });
+    console.log("top Img right: " + $topImg.css("right"));
   } else {
+    console.log("clicked");
     eventRecords.imgClicked = true;
     $topTextBox.hide('slow').queue(function (next) {
       $clickedText.removeClass('hidden');
@@ -99,9 +107,10 @@ function imgClick() {
         direction: 'rtl', //changes direction the pseduo element ::after of nameContent's direction to right to left
         right: '0px',
       });
+
       $topImg.animate(
         {
-          right: '-=70vw',
+          right: '-687.12px',
         },
         300,
         function () {
@@ -110,7 +119,9 @@ function imgClick() {
       );
       next();
     });
+    console.log("top Img right: " + $topImg.css("right"));
   }
+  
 }
 function formSubmit(event) {
   console.log('Making Submission');
