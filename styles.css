@@ -224,7 +224,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 50vh;
-  font-size: 4.3vw;
+  font-size: 4vw;
   padding: 2% 0 2% 0;
   background-color: var(--secondary-color);
 }
