@@ -18,16 +18,16 @@
       <nav class="navContainer">
         <a href="#Home" class="navItem">Home </a>
         <a href="#Skills" class="navItem">Skills</a>
-        <!-- <a href="#Projects" class="navItem">Projects </a> -->
-        <a href="ResumeFinal2.0.pdf" target="_blank" class="navItem">Resume </a>
+        <a href="#Projects" class="navItem">Projects</a>
         <a href="#Contacts" class="navItem">Contact</a>
+        <a href="Professional Resume.pdf" target="_blank" class="navItem">Resume </a>
       </nav>
     </header>
     <section id="Home" >
       
       <div class="animatedDiv" style="display: flex; width: 100%;">
       <div id="homeImg">
-        <img src="SetUpImage.JPG" alt="setUpImg" id="" />
+        <img src="images/SetUpImage.JPG" alt="setUpImg" id="" />
       </div>
       <div class="nameContent">
         <div id="unclicked">
@@ -45,7 +45,7 @@
       </div>
     </section>
     <section id="Skills">
-      <p id="SkillsTitle">Technical Skills</p>
+      <p class="sectionTitles">Technical Skills</p>
       <div id="skillsContainer">
         <div>
           <p class="skill">Python:</p>
@@ -71,6 +71,43 @@
         <div>
           <p class="skill">SQL:</p>
           <p id="sql" class="progressBar bar80">80%</p>
+        </div>
+      </div>
+    </section>
+    <section id="Projects">
+      <p class="sectionTitles">Top Projects</p>
+      <div id="projectsContainer">
+        <div class="projectContainer">
+          <p class="projectTitle">Anime Database Web Application</p>
+          <div class="projectImg" id="animeDatabase" data-video="videos/AnimeDatabase.mp4">
+          <img src="images/fullStackApp.png" alt="FullStackApplication" >
+          </div>
+          <div class="projectInfoContainer">
+            <p style="text-align: center; font-size: 1.5vw; text-decoration: underline;">technology used</p>
+            <div class="projectInfo">
+              <p>node.js <br>mysql <br>cyberduck <br>ssh-server <br>jQuery <br>HTML/css/JS</p>
+            </div>
+          </div>
+        </div>
+        <div class="projectContainer">
+          <p class="projectTitle">Guessing Game Web Application</p>
+          <div class="projectImg" id="guessingGame" data-video="videos/guessingGame.mp4">
+          <img src="images/guessingGame.png" alt="guessingGame">
+          </div>
+          <div class="projectInfoContainer">
+            <p style="text-align: center; font-size: 1.5vw; text-decoration: underline;">technology used</p>
+            <div class="projectInfo">
+              <p>node.js <br>cyberduck <br>ssh-server <br>jQuery <br>HTML/css/JS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="videoWindow">
+        <div class="videoContent">
+        <span class="closeBtn">&times;</span>
+        <video id="videoPlayer" controls>
+          <source src="" id="videoSrc">
+        </video>
         </div>
       </div>
     </section>

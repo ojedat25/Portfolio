@@ -9,8 +9,30 @@ function loadPage() {
   loadEventListeners(); // Attach all event listeners
   $(window).scroll(ScrollEvent); // Trigger ScrollEvent on scroll
   ScrollEvent(); // Trigger ScrollEvent once initially
-}
 
+  $(".projectImg").click(function () {
+    $("#videoSrc").attr("src", $(this).data("video")); //retrieves the data from the data-video attribute
+    $("#videoPlayer")[0].load() //reloads the videoplayer to show the new video
+    $(".videoWindow").css({display: "flex", opacity: "0"}).animate({ opacity: "1" },300); //makes the video window visible
+    $("#videoPlayer")[0].play()
+  })
+  $(".closeBtn").click(closeVideo);
+  $(".videoWindow").click(function (event) {
+    if ($(event.target).is($(".videoWindow"))) { //uses the jQuery .is() to check if the selected element (event.target) is equal to the videoWindow, if so it calls the closeVideo function
+      $(".videoWindow").animate({ opacity: "0" }, 300, closeVideo)
+    }
+  });
+
+  
+}
+function closeVideo(){
+  $(".videoWindow").css("display", "none");
+  const videoPlayer = $("#videoPlayer")[0];
+  videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+    console.log("done");
+  
+}
 // Function to handle scroll events
 function ScrollEvent() {
   const sections = $("body,html").children(); // Get list of all direct children of <body> and <html>
@@ -22,7 +44,7 @@ function ScrollEvent() {
   for (let i = 3; i < sections.length; i++) {
     const sectionTop = $(sections[i]).offset().top; // Top position of the section
     const sectionBottom = sectionTop + $(sections[i]).outerHeight(); // Bottom position of the section
-
+    console.log($(sections[i]).attr("id"))
     // Check if the section is within the viewport
     if (screenBottom > sectionTop && screenTop < sectionBottom) {
       // Handle animations for the Home section
@@ -35,20 +57,28 @@ function ScrollEvent() {
           bar.classList.add("progressBarAnimation");
         });
       }
+      else if ($(sections[i]).attr("id") == "Projects") {
+        $(".projectContainer").addClass("sectionAnimation");
+      }
       // Handle animations for other sections
       else {
-        $(sections[5]).children(".animatedDiv").addClass("sectionAnimation");
+        $(sections[6]).children(".animatedDiv").addClass("sectionAnimation");
       }
     }
     // If the section is not in the viewport, remove animations
     else {
       $(sections[i]).children(".animatedDiv").removeClass("sectionAnimation");
-
+      if ($(sections[i]).attr("id") == "Projects") {
+        $(".projectContainer").removeClass("sectionAnimation");
+      }
       // Trigger imgClick behavior if the image has been clicked
       if (eventRecords.imgClicked) {
         imgClick();
       }
-
+      if ($(sections[i]).attr("id") == "Projects" && $(".videoWindow").css("display") == "flex") {
+        console.log($(".videoWindow").css("display"))
+        closeVideo();
+      }
       // Remove progress bar animations for the Skills section
       if ($(sections[i]).attr("id") == "Skills") {
         progressBars.forEach((bar) => {
