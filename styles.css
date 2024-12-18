@@ -382,6 +382,7 @@ section {
 
 /* Form Section */
 #Form {
+  box-shadow: 2px 1px 10px black;
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
