@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link href="styles.css" type="text/css" rel="stylesheet" />
-    
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
     <script src="actions.js" defer></script>
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
     <header class="headerContainer">
@@ -24,24 +24,23 @@
       </nav>
     </header>
     <section id="Home">
-      
-      <div class="animatedDiv" style="display: flex; width: 100%;">
-      <div id="homeImg">
-        <img src="images/selfPortrait.JPG" alt="setUpImg" id="" />
-      </div>
-      <div class="nameContent">
-        <div id="unclicked">
-          <p>I'm <span id="nameHover">Toni Ojeda</span></p>
-          <p>AND THIS IS MY Portfolio WEBSITE, HOPE YOU LIKE IT</p>
+      <div class="animatedDiv" style="display: flex; width: 100%">
+        <div id="homeImg">
+          <img src="images/selfPortrait.JPG" alt="setUpImg" id="" />
         </div>
-        <div id="clicked" class="hidden">
-          <p id="clickedText"style="direction: ltr;">
-            AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS, BACK
-            THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY OWN
-            PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
-          </p>
+        <div class="nameContent">
+          <div id="unclicked">
+            <p>I'm <span id="nameHover">Toni Ojeda</span></p>
+            <p>AND THIS IS MY Portfolio WEBSITE, HOPE YOU LIKE IT</p>
+          </div>
+          <div id="clicked" class="hidden">
+            <p id="clickedText" style="direction: ltr">
+              AS A CURRENT COMPUTER SCIENCE STUDENT AND ASPIRING WEB/SOFTWARE DEVELOPER, I WAS ASKED ONCE WHAT PROJECTS I HAVE DONE TO SHOWCASE MY SKILLS, BACK
+              THEN I SAID NONE, ONLY SCHOOL PROJECTS THAT FOR SOME REASON DID NOT COUNT AS SHOWCASING MY SKILLS. SO THIS IS WHY I HAVE DECIDED TO MAKE MY OWN
+              PORTFOLIO WEBSITE USING HTML, CSS AND JQUERY. HOPE IT IS TO YOUR LIKING.
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </section>
     <section id="Skills">
@@ -62,11 +61,11 @@
         </div>
         <div>
           <p class="skill">CSS:</p>
-          <p id="css" class="progressBar bar65" >65%</p>
+          <p id="css" class="progressBar bar65">65%</p>
         </div>
         <div>
           <p class="skill">JS:</p>
-          <p id="js" class="progressBar bar70" >70%</p>
+          <p id="js" class="progressBar bar70">70%</p>
         </div>
         <div>
           <p class="skill">SQL:</p>
@@ -80,64 +79,63 @@
         <div class="projectContainer">
           <a href="https://github.com/ojedat25/Anime-Database-and-Community" target="_blank" class="projectTitle">Anime Database Web Application</a>
           <div class="projectImg" id="animeDatabase" data-video="videos/AnimeDatabase.mp4">
-          <img src="images/fullStackApp.png" alt="FullStackApplication" >
+            <img src="images/fullStackApp.png" alt="FullStackApplication" />
           </div>
           <div class="projectInfoContainer">
             <p>technology used</p>
             <div class="projectInfo">
-              <p>node.js <br>mysql <br>cyberduck <br>ssh-server <br>jQuery <br>HTML/css/JS</p>
+              <p>node.js <br />mysql <br />cyberduck <br />ssh-server <br />jQuery <br />HTML/css/JS</p>
             </div>
           </div>
         </div>
         <div class="projectContainer">
           <a href="https://github.com/ojedat25/GuessingGame" target="_blank" class="projectTitle">Guessing Game Web Application</a>
           <div class="projectImg" id="guessingGame" data-video="videos/guessingGame.mp4">
-          <img src="images/guessingGame.png" alt="guessingGame">
+            <img src="images/guessingGame.png" alt="guessingGame" />
           </div>
           <div class="projectInfoContainer">
             <p>technology used</p>
             <div class="projectInfo">
-              <p>node.js <br>cyberduck <br>ssh-server <br>jQuery <br>HTML/css/JS</p>
+              <p>node.js <br />cyberduck <br />ssh-server <br />jQuery <br />HTML/css/JS</p>
             </div>
           </div>
         </div>
       </div>
       <div class="videoWindow">
         <div class="videoContent">
-        <span class="closeBtn">&times;</span>
-        <video id="videoPlayer" controls>
-          <source src="" id="videoSrc">
-        </video>
+          <span class="closeBtn">&times;</span>
+          <video id="videoPlayer" controls>
+            <source src="" id="videoSrc" />
+          </video>
         </div>
       </div>
     </section>
     <section id="Contacts">
       <div class="animatedDiv">
-      <h1 style="text-align: center; font-size: 5vw">Contact Me!</h1>
-      <div id="contactContainer">
-        <form action="https://api.web3forms.com/submit" method="POST" id="Form">
-          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-          <input type="checkbox" name="botcheck" id="" style="display: none" />
-          <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4" />
-          <input type="text" class="inputBox" name="full_name" placeholder="Full name" required />
-          <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required />
-          <input type="email" class="inputBox" name="email" placeholder="Email Address" required />
-          <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
-          <button type="submit" id="Submit">Submit</button>
-          <p id="result"></p>
-        </form>
-      </div>
-      <div id="LogoContainer">
-        <p style="display: flex;">
-        <a href="https://github.com/ojedat25" target="_blank"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/ojedat20/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-        <a href="mailto:toniojeda2015@gmail.com"><i class='bx bxl-gmail'></i></a>
-        <p style="font-size: 5vh;">|+6124349013|</p>
-        <p>
+        <h1 style="text-align: center; font-size: 5vw">Contact Me!</h1>
+        <div id="contactContainer">
+          <form action="https://api.web3forms.com/submit" method="POST" id="Form">
+            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+            <input type="checkbox" name="botcheck" id="" style="display: none" />
+            <input type="hidden" name="access_key" value="23aad945-2e20-49e8-bda1-8183585565b4" />
+            <input type="text" class="inputBox" name="full_name" placeholder="Full name" required />
+            <input type="text" class="inputBox" name="phone_number" placeholder="Phone number" required />
+            <input type="email" class="inputBox" name="email" placeholder="Email Address" required />
+            <textarea class="inputBox" name="message" placeholder="Your message" required></textarea>
+            <button type="submit" id="Submit">Submit</button>
+            <p id="result"></p>
+          </form>
+        </div>
+        <div id="LogoContainer">
+          <p style="display: flex">
+            <a href="https://github.com/ojedat25" target="_blank"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/ojedat20/" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="mailto:toniojeda2015@gmail.com"><i class="bx bxl-gmail"></i></a>
+          </p>
 
-
-
-      </div>
+          <p style="font-size: 5vh">|+6124349013|</p>
+          <p></p>
+        </div>
       </div>
     </section>
   </body>
