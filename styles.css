@@ -45,6 +45,7 @@
 }
 button{
   appearance: none;
+  background-color: white;
 }
 /* HTML & Body */
 html {
@@ -507,9 +508,12 @@ section {
 .navContainer{
   margin: 0;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
 
+}
+.navItem{
+  margin: 0;
 }
 
   #homeImg {
