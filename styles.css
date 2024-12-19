@@ -626,9 +626,7 @@ section {
   font-size: 7vw !important;
   text-align: center;
 }
-#Projects{
-  border: 2px dashed red;
-}
+
 .projectContainer{
   height: fit-content;
 }
