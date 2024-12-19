@@ -11,7 +11,7 @@
   color: var(--color);
   outline: none;
   scroll-behavior: smooth;
-  
+
 
 }
 
@@ -54,22 +54,25 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  overflow-x: hidden;
 }
 
 /* Header Container */
 .headerContainer {
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   background-color: var(--secondary-color);
   backdrop-filter: blur(10px);
   top: 0;
   left: 0;
   width: 100%;
+  
   padding: 1.5% 0 1.5% 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 2.5vw;
+
 }
 
 /* Name Section in Header */
@@ -207,6 +210,10 @@ section {
   inset: -2px;
   transition: all 2s;
 }
+#clickedText{
+  direction: ltr;
+  font-size: 2.5vw;
+}
 
 /* Skills Section */
 #Skills {
@@ -275,7 +282,6 @@ section {
 #projectsContainer{
   position: relative;
   display: flex;
-
   width: 100%;
   height: 100%;
   background-color: var(--secondary-color);
@@ -293,6 +299,11 @@ section {
   flex-direction: column;
   opacity: 0;
   transition: all 2s;
+}
+.projectInfoContainer > p{
+  text-align: center; 
+  font-size: 1.5vw; 
+  text-decoration: underline;
 }
 .projectContainer a:hover{
   cursor: pointer;
@@ -466,4 +477,143 @@ section {
 
 .progressBarAnimation{
   width: var(--bar-width);
+}
+/*Media Queries*/
+
+@media only screen and (max-width: 600px) {
+  *{
+    border: 2px solid white;
+  }
+.headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 1000;
+    background-color: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px); /* Optional */
+}
+
+
+  #homeImg {
+  position: relative;
+  border-radius: 50%;
+  z-index: 50;
+  width: 26vw;
+  height: 35vw;
+  border: 2px solid;
+  border-color: var(--secondary-color);
+  transition: transform 1s, border-color 1s;
+  left: 2vw;
+}
+
+#homeImg img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  object-fit: cover;
+  
+  position: relative;
+  cursor: pointer;
+  object-position: 0 20%;
+
+}
+
+#homeImg:hover {
+  transform: scale(1.1);
+  border-color: var(--color);
+}
+
+/* Name Content in Home Section */
+.nameContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15vw;
+  padding: 5vw 0vw 5vw 9vw;
+  width: 85%;
+  height: 35vw;
+  background-color: var(--secondary-color);
+  font-size: 7vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 0px var(--secondary-color), -2px 0px var(--secondary-color), 1px 1px var(--secondary-color), -1px -1px var(--secondary-color),
+    -1px 1px var(--secondary-color), 1px -1px var(--secondary-color);
+  z-index: 25;
+  left: initial;
+  right: initial;
+}
+#clickedText{
+  font-size: 3.5vw;
+  border: 2px solid white;
+  margin-left: -7vw;
+  margin-right: 15vw;
+}
+.sectionTitles{
+  font-size: 15vw;
+}
+#skillsContainer{
+  gap: 20px;
+
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+  font-size: 8vw;
+  background-color: var(--secondary-color);
+}
+#Projects{
+  min-height: 120vh;
+  justify-content: flex-end;
+}
+.progressBar{
+  font-size: 7vw;
+}
+.projectContainer{
+  width: 70%;
+
+}
+#projectsContainer{
+  flex-direction: column;
+  height: 82%;
+  gap: 5%;
+  padding: 5% 0 5% 0;
+}
+.projectTitle{
+  font-size: 5vw;
+}
+.projectInfoContainer > p{
+  text-align: center; 
+  font-size: 3vw; 
+  text-decoration: underline;
+}
+#Form button{
+  width: 50%;
+}
+#Contacts h1{
+  font-size: 10vw !important;
+}
+#LogoContainer{
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+#LogoContainer i{
+  font-size: 10vw;
+}
+#LogoContainer p{
+  width: 90%;
+  justify-content: space-around;
+  font-size: 7vw !important;
+  text-align: center;
+}
+
 }
