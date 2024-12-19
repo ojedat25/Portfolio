@@ -630,6 +630,9 @@ section {
 .projectContainer{
   height: fit-content;
 }
+.projectsContainer{
+  height: fit-content;
+}
 .videoWindow{
   height: 120vh;
 }
