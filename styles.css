@@ -518,7 +518,7 @@ section {
   margin: 0;
   text-align: center;
   justify-content: flex-end;
-  width: 30%;
+  width: 40%;
   max-height: 0;
   flex-direction: column;
   background-color: var(--secondary-color);
@@ -527,7 +527,7 @@ section {
   border-radius: 0 0 0 10px;
   padding: 2% 0 0 0;
   backdrop-filter: blur(10px);
-  font-size: 4.5vw;
+  font-size: 7vw;
   z-index: 99;
   border-bottom: 5px solid transparent;
   border-left: 5px solid transparent;
@@ -546,7 +546,7 @@ section {
 .navContainer.expand{
   visibility: visible;
   opacity: 1;
-  max-height: 160px;
+  max-height: 250px;
   border-color: var(--secondary-color);
 
 }
@@ -566,23 +566,34 @@ section {
   border-color: white;
 }
   #homeImg {
-  width: 26vw;
-  height: 35vw;
+  width: 28vw;
+  height: 40vw;
   left: 2vw;
 }
 
 /* Name Content in Home Section */
 .nameContent {
-  margin-left: 15vw;
-  padding: 5vw 0vw 5vw 9vw;
+  padding:2% 0 2% 17%;
   width: 85%;
-  height: 35vw;
+  height: 40vw;
   font-size: 7vw;
+  text-align: unset;
+
+}
+
+
+#clicked{
+  width: 108%;
+  height: 100%;
+  margin-left: -48%;
+  padding: 2% 2% 2% 5%;
+  background-color: var(--main-color);
+  border-radius: 5px;
+
 }
 #clickedText{
-  font-size: 3.5vw;
-  margin-left: -7vw;
-  margin-right: 15vw;
+  font-size: 3.75vw;
+  height: 100%;
 }
 .sectionTitles{
   font-size: 15vw;
