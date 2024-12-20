@@ -48,7 +48,7 @@ function ScrollEvent() {
     if (screenBottom > sectionTop && screenTop < sectionBottom) {
       // Handle animations for the Home section
       if ($(sections[i]).attr("id") == "Home") {
-        $(sections[3]).children(".animatedDiv").addClass("sectionAnimation");
+        $(sections[4]).children(".animatedDiv").addClass("sectionAnimation");
       }
       // Handle progress bar animations for the Skills section
       else if ($(sections[i]).attr("id") == "Skills") {
@@ -61,7 +61,7 @@ function ScrollEvent() {
       }
       // Handle animations for other sections
       else {
-        $(sections[6]).children(".animatedDiv").addClass("sectionAnimation");
+        $(sections[7]).children(".animatedDiv").addClass("sectionAnimation");
       }
     }
     // If the section is not in the viewport, remove animations
@@ -89,6 +89,9 @@ function ScrollEvent() {
 
 // Attach event listeners for various interactions
 function loadEventListeners() {
+  $(".navBtn").click(function () {
+    $(".navContainer").toggleClass("expand");
+  });
   $("#homeImg").mouseover(function () {
     // Expands the width of the ::after pseudo-element in the nameContent div
     $("html").css("--after-width", "100%");
