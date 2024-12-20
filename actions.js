@@ -89,6 +89,9 @@ function ScrollEvent() {
 
 // Attach event listeners for various interactions
 function loadEventListeners() {
+  $("section").click(function () {
+    $(".navContainer").removeClass("expand");
+  })
   $(".navBtn").click(function () {
     $(".navContainer").toggleClass("expand");
   });
